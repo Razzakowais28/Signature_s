@@ -356,7 +356,7 @@
       '        </td>',
       '        <td valign="top" style="border-left:2px solid ' + ORANGE + ';padding:2px 18px 0 14px;">',
       '          <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;' + textBase + 'font-size:' + BODY_SIZE + ';line-height:' + BODY_SIZE + ';mso-line-height-rule:exactly;">',
-      '            <tr><td style="padding:0;margin:0;line-height:' + BODY_SIZE + ';mso-line-height-rule:exactly;">Tel:&nbsp;&nbsp;&nbsp;&nbsp;' + telLine + '</td></tr>',
+      '            <tr><td style="padding:0;margin:0;line-height:' + BODY_SIZE + ';mso-line-height-rule:exactly;">Telephone:&nbsp;' + telLine + '</td></tr>',
       '            <tr><td style="padding:0;margin:0;line-height:' + BODY_SIZE + ';mso-line-height-rule:exactly;">Mobile:&nbsp;' + mobileLine + '</td></tr>',
       '            <tr><td style="padding:0 0 4px 0;"><a href="https://www.siscosaudi.com" style="font-family:' + FONT + ';font-size:' + BODY_SIZE + ';color:' + BLUE + ';text-decoration:underline;">www.siscosaudi.com</a></td></tr>',
       '            <tr><td style="padding:0;">King Faisal, Ibn Abdul Al-Aziz,<br />Al-Bahar, Al Khobar 34218, Saudi Arabia</td></tr>',
@@ -403,7 +403,7 @@
     const html = buildSignatureHtml(v, true);
     const plain = [
       v.name, v.position, '',
-      'Tel:     ' + (v.tel || ''),
+      'Telephone: ' + (v.tel || ''),
       'Mobile:  ' + (v.mobile || ''),
       'www.siscosaudi.com',
       'King Faisal, Ibn Abdul Al-Aziz, Al-Bahar, Al Khobar 34218, Saudi Arabia'
