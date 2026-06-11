@@ -325,10 +325,26 @@
     });
   }
 
+  function capitalizeWords(raw) {
+    return String(raw).trim().replace(/(^|[\s-])(\S)/g, function (_, sep, letter) {
+      return sep + letter.toUpperCase();
+    });
+  }
+
+  function bindTitleCase(el) {
+    el.addEventListener('blur', function () {
+      const formatted = capitalizeWords(this.value);
+      if (this.value !== formatted) this.value = formatted;
+      update();
+    });
+  }
+
   function getValues() {
+    const name     = capitalizeWords(fields.name.value);
+    const position = capitalizeWords(fields.position.value);
     return {
-      name:     fields.name.value.trim()     || 'Your Name',
-      position: fields.position.value.trim() || 'Your Position',
+      name:     name     || 'Your Name',
+      position: position || 'Your Position',
       tel:      formatPhone(fields.tel.value),
       mobile:   formatPhone(fields.mobile.value),
     };
@@ -532,6 +548,8 @@
     loadLogoSource();
   }
 
+  bindTitleCase(fields.name);
+  bindTitleCase(fields.position);
   bindDigitsOnly(fields.tel);
   bindDigitsOnly(fields.mobile);
   Object.values(fields).forEach(function (el) {
